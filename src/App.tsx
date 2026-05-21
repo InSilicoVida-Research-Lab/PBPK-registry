@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { fetchRegistryModels } from './api/github';
+import { DeployInstructions } from './components/DeployInstructions';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { ModelGrid } from './components/ModelGrid';
@@ -67,8 +68,13 @@ function App() {
         <Header />
         <StatusBar message={status.message} type={status.type} showSpinner={status.showSpinner} />
         <SummaryStats stats={stats} />
-        <SearchControls filters={filters} onFiltersChange={setFilters} />
-        <ModelGrid models={filteredModels} hasFilters={hasFilters} />
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-5 items-start">
+          <div className="min-w-0">
+            <SearchControls filters={filters} onFiltersChange={setFilters} />
+            <ModelGrid models={filteredModels} hasFilters={hasFilters} />
+          </div>
+          <DeployInstructions />
+        </div>
       </main>
       <Footer />
     </div>

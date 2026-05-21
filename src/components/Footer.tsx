@@ -1,3 +1,5 @@
+const WASM_PK_URL = 'https://github.com/Crispae/wasm-pk';
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -10,11 +12,10 @@ export function Footer() {
             Systems Biology Markup Language model deployment dashboard
           </div>
         </div>
-        <div className="text-right">
+        <div className="text-right max-lg:text-left">
           <div className="text-sm mb-1">InsilicoVida Research Group</div>
           <div className="text-xs opacity-80">
-            <a href="https://github.com/Crispae/wasm-pk" className="text-white no-underline ml-3 hover:underline">wasm-pk</a>
-            <a href="https://github.com/Crispae/PBPK-BoilerPlate-UI" className="text-white no-underline ml-3 hover:underline">Boilerplate</a>
+            <a href={WASM_PK_URL} className="text-white no-underline ml-3 max-lg:ml-0 max-lg:mr-3 hover:underline">wasm-pk</a>
           </div>
         </div>
         <div className="w-full border-t border-white/20 my-3" />

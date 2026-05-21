@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply font-serif bg-white text-text-dark leading-relaxed min-h-screen flex flex-col;
+  }
+
+  a {
+    @apply text-primary no-underline;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-bg-light;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-3.5 py-2.5 text-sm font-sans border border-primary cursor-pointer transition-all uppercase tracking-wide;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white;
+  }
+
+  .btn-primary:hover {
+    @apply bg-primary-light no-underline;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-bg-light no-underline;
+  }
+
+  .panel {
+    @apply bg-white border border-border flex flex-col h-full overflow-hidden;
+  }
+
+  .panel-header {
+    @apply px-5 py-3.5 bg-primary text-white;
+  }
+
+  .panel-title {
+    @apply text-sm font-bold uppercase tracking-wide m-0;
+  }
+
+  .panel-body {
+    @apply flex-1 overflow-y-auto p-0 scrollbar-thin min-h-0;
+  }
+
+  .panel-body-padded {
+    @apply p-4 px-5;
+  }
+
+  .panel-footer {
+    @apply p-4 px-5 border-t border-border bg-bg-light flex-shrink-0;
+  }
+
+  .form-group {
+    @apply mb-2.5 grid grid-cols-[1fr_220px] gap-2 items-center;
+  }
+
+  .form-group label {
+    @apply text-xs text-text-dark leading-tight;
+  }
+
+  .form-group input,
+  .form-group select {
+    @apply w-full px-2 py-1.5 border border-border text-sm font-sans bg-white;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    @apply outline-none border-primary;
+  }
+}
+
+@layer utilities {
+  .spinner {
+    @apply inline-block w-3.5 h-3.5 border-2 border-border border-t-primary rounded-full animate-spin mr-2 align-middle;
+  }
+}

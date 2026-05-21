@@ -2,7 +2,6 @@ import { registrySource } from '../api/github';
 
 const BOILERPLATE_URL = `https://github.com/${registrySource.owner}/${registrySource.templateRepo}`;
 const WASM_PK_URL = 'https://github.com/Crispae/wasm-pk';
-const DEPLOY_WORKFLOW_URL = `${WASM_PK_URL}/blob/main/examples/researcher-repo/deploy.yml`;
 
 const deploySteps = [
   `Fork ${registrySource.owner}/${registrySource.templateRepo} on GitHub.`,
